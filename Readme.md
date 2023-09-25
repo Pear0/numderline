@@ -4,8 +4,8 @@
 
 This is a fork of [thume's numderline](https://github.com/trishume/numderline) with a few changes:
 - Merged this fix for `..` ranges [PR#10](https://github.com/trishume/numderline/pull/10)
-- In hex literals 0x<u>1234</u>abcd, characters are grouped into 4 to better distinguish the bytes  
-- Numbers that loosely look like a YYYYMMDD date are formatted as <u>YYYY</u>MM<u>DD</u>. As a loose heuristic for actual dates, this ligature requires the most significant digits of the year, month, and day to be reasonable.
+- In hex literals 0x<ins>1234</ins>abcd, characters are grouped into 4 to better distinguish the bytes  
+- Numbers that loosely look like a YYYYMMDD date are formatted as <ins>YYYY</ins>MM<ins>DD</ins>. As a loose heuristic for actual dates, this ligature requires the most significant digits of the year, month, and day to be reasonable.
 
 ## Intro
 
