@@ -1,4 +1,13 @@
-# Numderline
+# Hexderline (opinionated Numderline for hex)
+
+## Fork Details
+
+This is a fork of [thume's numderline](https://github.com/trishume/numderline) with a few changes:
+- Merged this fix for `..` ranges [PR#10](https://github.com/trishume/numderline/pull/10)
+- In hex literals 0x<u>1234</u>abcd, characters are grouped into 4 to better distinguish the bytes  
+- Numbers that loosely look like a YYYYMMDD date are formatted as <u>YYYY</u>MM<u>DD</u>. As a loose heuristic for actual dates, this ligature requires the most significant digits of the year, month, and day to be reasonable.
+
+## Intro
 
 Numderline is a hacky font patcher that takes a font and converts it into one that underlines alternating groups of 3 digits starting from the right. It can also do other similar tricks.
 

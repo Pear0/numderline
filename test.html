@@ -10,7 +10,7 @@
         /*src: url("out/Sauce Code Pro Light with NSub.ttf");*/
         /*src: url("out/Hack Regular with Numderline.ttf");*/
         /*src: url("out/Hack Regular with NGroup.ttf");*/
-        src: url("out/InconsolataGo with Numderline.ttf");
+        src: url("out/XMenlo Regular with Hexderline.ttf");
         /*src: url("out/DejaVu Sans Mono with Numderline.ttf");*/
         /*src: url("out/DejaVu Sans Mono with NShift80.ttf");*/
         /*src: url("out/DejaVu Sans Mono with NShift100Squish0p85.ttf");*/
@@ -90,6 +90,51 @@ hamburgefont
 1234567890123456789
 12345678901234567890
 
+0x
+0x1
+0x12
+0x123
+0x1234
+0x12345
+0x123456
+0x1234567
+0x12345678
+0x123456789
+0x123456789a
+0x123456789ab
+0x123456789abc
+0x123456789abcd
+0x123456789abcde
+0x123456789abcdef
+0x123456789abcdef0
+0x123456789abcdef12
+0x123456789abcdef123
+0x123456789abcdef1234
+0x123456789abcdef12345
+0x123456789abcdef123456
+
+1
+12
+123
+1234
+12345
+123456
+1234567
+12345678
+123456789
+123456789a
+123456789ab
+123456789abc
+123456789abcd
+123456789abcde
+123456789abcdef
+123456789abcdef0
+123456789abcdef12
+123456789abcdef123
+123456789abcdef1234
+123456789abcdef12345
+123456789abcdef123456
+
 1234.1
 1234.12
 1234.123
@@ -105,7 +150,134 @@ hamburgefont
 222222
 777777
 
+1234.20231234
+
+18001234
+19001234
+19701234
+19991234
+20001234
+20231234
+20991234
+21001234
+22001234
+20002034
+20001240
+
+
+
 123456 12345678 12345678
+
+$ objdump -p factorial
+
+factorial:     file format elf64-x86-64
+
+Program Header:
+    PHDR off    0x0000000000000040 vaddr 0x0000000000400040 paddr 0x0000000000400040 align 2**3
+         filesz 0x00000000000001f8 memsz 0x00000000000001f8 flags r-x
+  INTERP off    0x0000000000000238 vaddr 0x0000000000400238 paddr 0x0000000000400238 align 2**0
+         filesz 0x000000000000001c memsz 0x000000000000001c flags r--
+    LOAD off    0x0000000000000000 vaddr 0x0000000000400000 paddr 0x0000000000400000 align 2**21
+         filesz 0x0000000000000734 memsz 0x0000000000000734 flags r-x
+    LOAD off    0x0000000000000e18 vaddr 0x0000000000600e18 paddr 0x0000000000600e18 align 2**21
+         filesz 0x0000000000000208 memsz 0x0000000000000218 flags rw-
+ DYNAMIC off    0x0000000000000e40 vaddr 0x0000000000600e40 paddr 0x0000000000600e40 align 2**3
+         filesz 0x00000000000001a0 memsz 0x00000000000001a0 flags rw-
+ ..
+Dynamic Section:
+  NEEDED               libc.so.6
+  INIT                 0x00000000004003f0
+  FINI                 0x0000000000400668
+  HASH                 0x0000000000400298
+  GNU_HASH             0x00000000004002c0
+  STRTAB               0x0000000000400340
+  SYMTAB               0x00000000004002e0
+  STRSZ                0x000000000000003f
+  SYMENT               0x0000000000000018
+  DEBUG                0x0000000000000000
+  PLTGOT               0x0000000000600fe8
+
+Disassembly of section .interp:
+
+0000000000400238 :
+  400238:       2f                      (bad)
+  400239:       6c                      insb   (%dx),%es:(%rdi)
+  40023a:       69 62 36 34 2f 6c 64    imul   $0x646c2f34,0x36(%rdx),%esp
+  400241:       2d 6c 69 6e 75          sub    $0x756e696c,%eax
+  400246:       78 2d                   js     400275
+  400248:       78 38                   js     400282
+  40024a:       36                      ss
+  40024b:       2d 36 34 2e 73          sub    $0x732e3436,%eax
+  400250:       6f                      outsl  %ds:(%rsi),(%dx)
+  400251:       2e 32 00                xor    %cs:(%rax),%al
+
+(base) zz@home% $CC -flegacy-pass-manager -Xclang -load -Xclang build/skeleton/libSkeletonPass.so example.c
+
+clang-15: /usr/lib/llvm-10/include/llvm/Support/Casting.h:105: static bool llvm::isa_impl_cl<llvm::Constant, const llvm::Value *>::doit(const From *) [To = llvm::Constant, From = const llvm::Value *]: Assertion `Val && "isa<> used on a null pointer"' failed.
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.      Program arguments: /home/zz/soft/llvm-14.0.5/bin/clang-15 -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name example.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -fcoverage-compilation-dir=/home/zz/work/llvm-pass-skeleton -resource-dir /home/zz/soft/llvm-14.0.5/lib/clang/14.0.5 -internal-isystem /home/zz/soft/llvm-14.0.5/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/zz/work/llvm-pass-skeleton -ferror-limit 19 -fgnuc-version=4.2.1 -flegacy-pass-manager -fcolor-diagnostics -load build/skeleton/libSkeletonPass.so -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /tmp/example-aa2906.o -x c example.c
+1.      <eof> parser at end of file
+2.      Per-function optimization
+3.      Running pass 'Unnamed pass: implement Pass::getPassName()' on function '@main'
+ #0 0x000055d869117453 llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x1b7e453)
+ #1 0x000055d86911539e llvm::sys::RunSignalHandlers() (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x1b7c39e)
+ #2 0x000055d8691178ef SignalHandler(int) Signals.cpp:0:0
+ #3 0x00007f95f405d3c0 __restore_rt (/lib/x86_64-linux-gnu/libpthread.so.0+0x143c0)
+ #4 0x00007f95f3af003b raise /build/glibc-sMfBJT/glibc-2.31/signal/../sysdeps/unix/sysv/linux/raise.c:51:1
+ #5 0x00007f95f3acf859 abort /build/glibc-sMfBJT/glibc-2.31/stdlib/abort.c:81:7
+ #6 0x00007f95f3acf729 get_sysdep_segment_value /build/glibc-sMfBJT/glibc-2.31/intl/loadmsgcat.c:509:8
+ #7 0x00007f95f3acf729 _nl_load_domain /build/glibc-sMfBJT/glibc-2.31/intl/loadmsgcat.c:970:34
+ #8 0x00007f95f3ae1006 (/lib/x86_64-linux-gnu/libc.so.6+0x34006)
+ #9 0x00007f95f408261a llvm::isa_impl_cl<llvm::Constant, llvm::Value const*>::doit(llvm::Value const*) (build/skeleton/libSkeletonPass.so+0xd61a)
+#10 0x00007f95f40825a8 llvm::isa_impl_wrap<llvm::Constant, llvm::Value const*, llvm::Value const*>::doit(llvm::Value const* const&) (build/skeleton/libSkeletonPass.so+0xd5a8)
+#11 0x00007f95f4082582 llvm::isa_impl_wrap<llvm::Constant, llvm::Value* const, llvm::Value const*>::doit(llvm::Value* const&) (build/skeleton/libSkeletonPass.so+0xd582)
+#12 0x00007f95f40824d5 bool llvm::isa<llvm::Constant, llvm::Value*>(llvm::Value* const&) (build/skeleton/libSkeletonPass.so+0xd4d5)
+#13 0x00007f95f4082335 llvm::cast_retty<llvm::Constant, llvm::Value*>::ret_type llvm::dyn_cast<llvm::Constant, llvm::Value>(llvm::Value*) (build/skeleton/libSkeletonPass.so+0xd335)
+#14 0x00007f95f4080d3a llvm::IRBuilder<llvm::ConstantFolder, llvm::IRBuilderDefaultInserter>::CreateMul(llvm::Value*, llvm::Value*, llvm::Twine const&, bool, bool) (build/skeleton/libSkeletonPass.so+0xbd3a)
+#15 0x00007f95f40804c0 (anonymous namespace)::SkeletonPass::runOnFunction(llvm::Function&) Skeleton.cpp:0:0
+#16 0x000055d868aec53d llvm::FPPassManager::runOnFunction(llvm::Function&) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x155353d)
+#17 0x000055d868aebf3e llvm::legacy::FunctionPassManagerImpl::run(llvm::Function&) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x1552f3e)
+#18 0x000055d868af36ab llvm::legacy::FunctionPassManager::run(llvm::Function&) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x155a6ab)
+#19 0x000055d86935f4fb clang::EmitBackendOutput(clang::DiagnosticsEngine&, clang::HeaderSearchOptions const&, clang::CodeGenOptions const&, clang::TargetOptions const&, clang::LangOptions const&, llvm::StringRef, llvm::Module*, clang::BackendAction, std::unique_ptr<llvm::raw_pwrite_stream, std::default_delete<llvm::raw_pwrite_stream> >) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x1dc64fb)
+#20 0x000055d869e85331 clang::BackendConsumer::HandleTranslationUnit(clang::ASTContext&) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x28ec331)
+#21 0x000055d86a8e2b74 clang::ParseAST(clang::Sema&, bool, bool) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x3349b74)
+#22 0x000055d86994d3b9 clang::FrontendAction::Execute() (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x23b43b9)
+#23 0x000055d8698ca986 clang::CompilerInstance::ExecuteAction(clang::FrontendAction&) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x2331986)
+#24 0x000055d8699fd97b clang::ExecuteCompilerInvocation(clang::CompilerInstance*) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0x246497b)
+#25 0x000055d8681766c3 cc1_main(llvm::ArrayRef<char const*>, char const*, void*) (/home/zz/soft/llvm-14.0.5/bin/clang-15+0xbdd6c3)
+#26 0x000055d868174b6b ExecuteCC1Tool(llvm::SmallVectorImpl<char const*>&) driver.cpp:0:0
+#27 0x000055d8681749e0 main (/home/zz/soft/llvm-14.0.5/bin/clang-15+0xbdb9e0)
+#28 0x00007f95f3ad10b3 __libc_start_main /build/glibc-sMfBJT/glibc-2.31/csu/../csu/libc-start.c:342:3
+#29 0x000055d868171a0e _start (/home/zz/soft/llvm-14.0.5/bin/clang-15+0xbd8a0e)
+clang-15: error: unable to execute command: Aborted (core dumped)
+clang-15: error: clang frontend command failed due to signal (use -v to see invocation)
+clang version 14.0.5 (https://github.com/llvm/llvm-project c12386ae247c0d46e1d513942e322e3a0510b126)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /home/zz/soft/llvm-14.0.5/bin
+clang-15: note: diagnostic msg:
+********************
+
+PLEASE ATTACH THE FOLLOWING FILES TO THE BUG REPORT:
+Preprocessed source(s) and associated run script(s) are located at:
+clang-15: note: diagnostic msg: /tmp/example-55f81b.c
+clang-15: note: diagnostic msg: /tmp/example-55f81b.sh
+clang-15: note: diagnostic msg:
+
+********************
+
+
+123.0
+123.01
+123.012
+123.0123
+123.01234
+123.012345
+123.0123456
+123.01234567
+123.012345678
+123.0123456789
 
 aoeu1234125otnuehnth
 12543,1243152,12543523</pre>
